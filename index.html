@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <title>Music — Hana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="player">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">♫</span>
+        <span>music<span class="muted">.</span></span>
+      </div>
+      <button id="listButton" class="icon-btn" aria-label="Daftar lagu">☷</button>
+    </header>
+
+    <section class="now-playing">
+      <div class="cover-wrap">
+        <img id="cover" src="covers/midnight.jpg"
+             alt="Cover lagu" class="cover">
+      </div>
+
+      <div class="song-info">
+        <p class="eyebrow">NOW PLAYING</p>
+        <h1 id="title">Pilih sebuah lagu</h1>
+        <p id="artist">Music Library</p>
+      </div>
+
+      <div class="progress-area">
+        <input id="progress" type="range"
+               min="0" max="100" value="0"
+               aria-label="Posisi lagu">
+
+        <div class="time-row">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="shuffle" class="icon-btn small"
+                aria-label="Acak lagu">⤨</button>
+        <button id="prev" class="icon-btn"
+                aria-label="Lagu sebelumnya">|◀</button>
+        <button id="play" class="play-btn"
+                aria-label="Putar">▶</button>
+        <button id="next" class="icon-btn"
+                aria-label="Lagu berikutnya">▶|</button>
+        <button id="repeat" class="icon-btn small"
+                aria-label="Ulangi lagu">↻</button>
+      </div>
+
+      <div class="volume-row">
+        <span>♪</span>
+        <input id="volume" type="range"
+               min="0" max="1" step="0.01"
+               value="0.8" aria-label="Volume">
+        <span>♫</span>
+      </div>
+    </section>
+
+    <section id="library" class="library">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR COLLECTION</p>
+          <h2>Library</h2>
+        </div>
+        <span id="songCount">0 songs</span>
+      </div>
+
+      <div id="songList" class="song-list"></div>
+    </section>
+
+    <footer>Made for quiet moments.</footer>
+
+    <audio id="audio" preload="metadata"></audio>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
